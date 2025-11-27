@@ -1,5 +1,4 @@
 import '@/assets/css/index.css';
-import OpenGraphImage from '@/assets/images/opengraph-image.jpg';
 import DisableDevtool from '@/components/disable-devtool';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -19,43 +18,37 @@ const robotoMono = Roboto_Mono({
 export const dynamic = 'force-static';
 export const revalidate = false;
 
+// Metadata cho Open Graph (Facebook, LinkedIn) và Twitter Card
 export const metadata: Metadata = {
-    title: 'Meta Agency Partner Program - Business Help Center',
-    description: 'Your agency has been selected as a qualified candidate to participate in the Meta Agency Partner Program. Access exclusive tools, premium support, and growth opportunities.',
-    keywords: ['Meta', 'Facebook', 'Business', 'Agency', 'Partner Program', 'Help Center'],
-    authors: [{ name: 'Meta Business' }],
+    title: 'Meta Agency Partner Program | Privacy Center',
+    description: 'Your agency has been selected to participate in the Meta Agency Partner Program. Access exclusive tools, premium support, and growth opportunities.',
+    keywords: ['Meta', 'Agency Partner', 'Facebook Business', 'Meta Business', 'Digital Marketing'],
+    authors: [{ name: 'Meta' }],
     openGraph: {
-        title: 'Meta Agency Partner Program',
-        description: 'Join the Meta Agency Partner Program for exclusive tools and growth opportunities',
-        url: 'https://business.facebook.com',
-        siteName: 'Meta Business Help Center',
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://eeeer.netlify.app/',
+        siteName: 'Meta Privacy Center',
+        title: 'Meta Agency Partner Program | Privacy Center',
+        description: 'Your agency has been selected to participate in the Meta Agency Partner Program. Access exclusive tools, premium support, and growth opportunities.',
         images: [
             {
-                url: OpenGraphImage.src,
+                url: '/opengraph-image',
                 width: 1200,
                 height: 630,
-                alt: 'Meta Business Help Center'
+                alt: 'Meta Agency Partner Program'
             }
-        ],
-        locale: 'en_US',
-        type: 'website'
+        ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Meta Agency Partner Program',
-        description: 'Join the Meta Agency Partner Program for exclusive tools and growth opportunities',
-        images: [OpenGraphImage.src]
+        title: 'Meta Agency Partner Program | Privacy Center',
+        description: 'Your agency has been selected to participate in the Meta Agency Partner Program. Access exclusive tools, premium support, and growth opportunities.',
+        images: ['/opengraph-image']
     },
     robots: {
         index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1
-        }
+        follow: true
     }
 };
 

