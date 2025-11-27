@@ -2,6 +2,9 @@
 command = "pnpm build"
 publish = ".next"
 
+[context.production.environment]
+NEXT_PUBLIC_BASE_URL = "https://conga.netlify.app"
+
 [[headers]]
 for = "/*"
 [headers.values]

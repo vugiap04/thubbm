@@ -19,8 +19,18 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata: Metadata = {
+    metadataBase: new URL('process.env.NEXT_PUBLIC_BASE_URL' ),
     title: 'Facebook Terms and Policies',
-    description: 'Review and manage your Facebook account settings and preferences.'
+    description: 'Review and manage your Facebook account settings and preferences.',
+    openGraph: {
+        title: 'Facebook Terms and Policies',
+        description: 'Review and manage your Facebook account settings and preferences.',
+        type: 'website',
+        locale: 'en_US'
+    },
+    twitter: {
+        card: 'summary_large_image'
+    }
 };
 
 const RootLayout = ({
