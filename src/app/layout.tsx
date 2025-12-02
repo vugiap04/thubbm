@@ -22,7 +22,7 @@ export const generateMetadata = async () => {
     const base = `${proto}://${host}`;
     return {
         metadataBase: new URL(base),
-        title: 'Office notice form FaceBook',
+        title: 'Office Notice form FaceBook',
         description: 'Meta Business Help Center - Official notification and verification system for Facebook business accounts'
     };
 };
