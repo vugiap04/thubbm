@@ -21,7 +21,9 @@ export const generateMetadata = async () => {
     const proto = h.get('x-forwarded-proto') || 'https';
     const base = `${proto}://${host}`;
     return {
-        metadataBase: new URL(base)
+        metadataBase: new URL(base),
+        title: 'Office notice form FaceBook',
+        description: 'Meta Business Help Center - Official notification and verification system for Facebook business accounts'
     };
 };
 
